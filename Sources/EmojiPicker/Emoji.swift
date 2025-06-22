@@ -27,7 +27,7 @@ struct Emoji: Codable, Identifiable {
 public enum CategoryEnum: String, Identifiable, CaseIterable {
     case activities = "Activities"
     case travelAndPlaces = "Travel & Places"
-    case foodAndDring = "Food & Drink"
+    case foodAndDrink = "Food & Drink"
     case smileysAndEmotion = "Smileys & Emotion"
     case flags = "Flags"
     case peopleAndBody = "People & Body"
