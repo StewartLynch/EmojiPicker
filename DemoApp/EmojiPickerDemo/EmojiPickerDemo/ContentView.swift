@@ -30,7 +30,10 @@ struct ContentView: View {
     @State private var showSearchTerm = false
     
     var body: some View {
-        NavigationStack {
+        Text("Emoji Picker")
+            .font(.largeTitle).bold()
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding()
             Form {
                 Section {
                     HStack {
@@ -157,8 +160,7 @@ EmojiPickerView(
                     Text("Search Term only")
                 }
             }
-            .navigationTitle("Emoji Picker")
-        }
+            .scrollBounceBehavior(.basedOnSize)
     }
 }
 
