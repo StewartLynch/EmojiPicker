@@ -30,10 +30,7 @@ struct ContentView: View {
     @State private var showSearchTerm = false
     
     var body: some View {
-        Text("Emoji Picker")
-            .font(.largeTitle).bold()
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding()
+        NavigationStack {
             Form {
                 Section {
                     HStack {
@@ -55,11 +52,11 @@ EmojiPickerView(
                         .font(.largeTitle)
                         .buttonStyle(.plain)
                         .frame(maxWidth: .infinity, alignment: .trailing)
-                        .sheet(isPresented: $showAll) {
-                            EmojiPickerView(
-                               selectedEmoji: $allCategories
-                            )
-                        }
+                    }
+                    .sheet(isPresented: $showAll) {
+                        EmojiPickerView(
+                            selectedEmoji: $allCategories
+                        )
                     }
                 } header: {
                     Text("All Categories Available")
@@ -116,13 +113,13 @@ EmojiPickerView(
                         }
                         .font(.largeTitle)
                         .buttonStyle(.plain)
-                        .sheet(isPresented: $showMixed) {
-                            EmojiPickerView(
-                                selectedEmoji: $mixedCategories,
-                                limitedCategories: [.symbols, .objects]
-                            )
-                            .presentationDetents([.medium])
-                        }
+                    }
+                    .sheet(isPresented: $showMixed) {
+                        EmojiPickerView(
+                            selectedEmoji: $mixedCategories,
+                            limitedCategories: [.symbols, .objects]
+                        )
+                        .presentationDetents([.medium])
                     }
                 } header: {
                     Text("Multiple Categories Only")
@@ -161,6 +158,8 @@ EmojiPickerView(
                 }
             }
             .scrollBounceBehavior(.basedOnSize)
+            .navigationTitle("Emoji Picker")
+        }
     }
 }
 
