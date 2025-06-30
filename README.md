@@ -9,13 +9,19 @@ You can add `EmojiPicker` to your project using [Swift Package Manager](https://
 ### In Xcode:
 
 1. Open your project.
+
 2. Go to **File > Add Packages…**
+
 3. Enter the package URL:
+
    ```
    https://github.com/StewartLynch/EmojiPicker
    ```
+
 4. Select the version range you want to use (recommend "Up to Next Major").
+
 5. Import `EmojiPicker` in the files where you need it:
+
    ```swift
    import EmojiPicker
    ```
@@ -24,7 +30,7 @@ You can add `EmojiPicker` to your project using [Swift Package Manager](https://
 
 ## 🧩 Features
 
-- ✅ Access hundres of emojis across multiple categories.
+- ✅ Access hundreds of emojis across multiple categories.
 - ✅ Filter emojis by category or custom arrays of categories.
 - ✅ Present the picker as a modal sheet or popover.
 - ✅ Includes built-in search for emojis by name, search term or category.
@@ -60,7 +66,7 @@ var body: some View {
 
 ### Customizing Categories
 
-You can restrict the emojis shown using  specific category filters:
+You can restrict the emojis shown using specific category filters:
 
 ```swift
 EmojiPicker(
@@ -93,7 +99,7 @@ EmojiPicker(
 
 Instead of a sheet presentation, you may wish to present the picker as a popover.
 
-On iOS this requires the `.presentationCompactAdaptation(.popover)` modifier
+On iOS this requires the `.presentationCompactAdaptation(.popover)` modifier:
 
 ```swift
 .popover(isPresented: $showSingle) {
@@ -126,10 +132,33 @@ These are decoded internally to provide metadata and search capability for all e
 
 ---
 
+## 💻 Demo App
+
+This repository includes a fully working **demo app** to showcase how to use `EmojiPicker` in a real SwiftUI project.
+
+### How to run it
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/StewartLynch/EmojiPicker.git
+   ```
+
+2. Open the demo app project:
+
+   ```
+   DemoApp/EmojiPickerDemo/EmojiPickerDemo.xcodeproj
+   ```
+
+3. Select a simulator or your device and build & run.
+
+The demo app illustrates multiple use cases, including presenting the picker as a sheet or popover, and filtering by category or search term.  
+Feel free to explore or modify it to experiment with different configurations.
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License.
 
 ---
-
-
