@@ -110,7 +110,6 @@ public struct EmojiPickerView: View {
                 }
             }
             .padding()
-
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(filteredEmoji) { emoji in
