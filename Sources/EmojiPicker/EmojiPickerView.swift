@@ -23,13 +23,15 @@ public struct EmojiPickerView: View {
     @Binding var selectedEmoji: String
     let limitedCategories: [CategoryEnum]
     let searchTerm: String
+    let withDismiss: Bool
     @State private var selectedCategory: String
     @State private var searchText: String = ""
     
     public init(
     selectedEmoji: Binding<String>,
     limitedCategories: [CategoryEnum] = [],
-    searchTerm: String = ""
+    searchTerm: String = "",
+    withDismiss: Bool = true
     ) {
         self._selectedEmoji = selectedEmoji
         self.limitedCategories = limitedCategories
@@ -37,6 +39,7 @@ public struct EmojiPickerView: View {
         let initialCategory = limitedCategories.count == 1 ? limitedCategories.first!.rawValue : "All Categories"
         self._selectedCategory = State(initialValue: initialCategory)
         self._searchText = State(initialValue: searchTerm)
+        self.withDismiss = withDismiss
     }
     
     var availableCategories: [String] {
@@ -113,7 +116,9 @@ public struct EmojiPickerView: View {
                     ForEach(filteredEmoji) { emoji in
                         Button {
                             selectedEmoji = emoji.emoji
-                            dismiss()
+                            if withDismiss {
+                                dismiss()
+                            }
                         } label: {
                             Text(emoji.emoji)
                                 .font(.largeTitle)

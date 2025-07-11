@@ -114,6 +114,20 @@ On iOS this requires the `.presentationCompactAdaptation(.popover)` modifier:
 
 ---
 
+### Preventing Dismissal
+
+If you wish to present the EmojiPickerView as a view within your own modal sheet that uses it's own Environment dismiss key value, you can disable the dismissal of that sheet whenever a symbol is tapped by including a withDismiss argument with a value of **false**.
+
+```
+EmojiPicker(
+    loader: loader,
+    selectedEmoji: $emoji,
+    withDismiss: false
+)
+```
+
+------
+
 ## 🔍 Requirements
 
 - iOS 18+, iPadOS 18+, macOS 15+
